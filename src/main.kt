@@ -37,9 +37,18 @@ fun main() {
     contaLucas.saca(100.0)
     println(contaLucas.saldo)
 
+    println()
+
     println("Sacando em excesso")
     contaLucas.saca(500.0)
     println(contaLucas.saldo)
+
+    println()
+
+    println("Transferindo da Michely para o Lucas")
+    contaMichely.transfere(contaLucas, 500.0)
+    println("Conta do Lucas: ${contaLucas.saldo}")
+    println("Conta da Michely: ${contaMichely.saldo}")
 }
 
 
@@ -54,9 +63,16 @@ class Conta {
 
     fun saca(valor: Double){
         if(saldo >= valor){
-            saldo -= valor
-        }else {
-            println("Saldo insuficiente. Seu saldo é de $saldo e sua tentativa é de $valor")
+            this.saldo -= valor
+        } else {
+            println("Saldo insuficiente. Seu saldo é de $saldo e sua tentativa foi de $valor")
+        }
+    }
+
+    fun transfere(contaDestino: Conta, valor: Double){
+        if (saldo >= valor){
+            this.saldo -= valor
+            contaDestino.saldo += valor
         }
     }
 }
