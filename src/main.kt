@@ -3,21 +3,21 @@ fun main() {
     val contaLucas = Conta()
     contaLucas.titular = "Lucas"
     contaLucas.numero = 2000
-    contaLucas.setSaldo(100.0)
+    contaLucas.deposita(100.0)
 
 
     val contaMichely = Conta()
     contaMichely.titular = "Michely"
     contaMichely.numero = 1000
-    contaMichely.setSaldo(500.0)
+    contaMichely.deposita(500.0)
 
     println(contaLucas.titular)
     println(contaLucas.numero)
-    println(contaLucas.getSaldo())
+    println(contaLucas.saldo)
     println()
     println(contaMichely.titular)
     println(contaMichely.numero)
-    println(contaMichely.getSaldo())
+    println(contaMichely.saldo)
 
 //    println()
 //
@@ -52,15 +52,16 @@ fun main() {
 }
 
 
-
-
 class Conta {
     var titular = ""
     var numero = 0
-    private var saldo = 0.0
+    var saldo = 0.0
+        private set
 
     fun deposita(valor: Double) {
-        this.saldo += valor
+        if (valor > 0) {
+            this.saldo += valor
+        }
     }
 
     fun saca(valor: Double) {
@@ -80,15 +81,17 @@ class Conta {
         return false
     }
 
-    fun getSaldo(): Double{
-        return saldo
-    }
-
-    fun setSaldo(valor: Double){
-        if(valor > 0){
-            saldo = valor
-        }
-    }
+    // Não utilizado
+//    fun getSaldo(): Double {
+//        return saldo
+//    }
+//
+//    fun setSaldo(valor: Double) {
+//        if (valor > 0) {
+//            saldo = valor
+//        }
+//    }
+    // Fim do não utilizado
 }
 
 fun testaCopiasReferencias() {
