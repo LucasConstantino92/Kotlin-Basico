@@ -31,4 +31,20 @@ fun main() {
     }else {
         println("Falha na autenticação.")
     }
+
+    val ricardo = Diretor(
+        nome = "Ricardo",
+        cpf = "333.333.333.09",
+        salario = 8000.0,
+        senha = 4321,
+        plr = 200.0
+    )
+
+    println()
+
+    println("Nome ${ricardo.nome}")
+    println("CPF ${ricardo.cpf}")
+    println("Salario ${ricardo.salario}")
+    println("Bonificação Gerente ${ricardo.bonificacao()}")
+    println("PLR: ${ricardo.plr}")
 }
