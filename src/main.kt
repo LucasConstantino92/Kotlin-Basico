@@ -1,11 +1,11 @@
 fun main() {
     println("Bem vindo ao ByteBank")
 
-    val contaLucas = Conta("Lucas", 2000)
+    val contaLucas = Conta(titular = "Lucas", numero = 100)
     contaLucas.deposita(100.0)
 
 
-    val contaMichely = Conta("Michely", 1000)
+    val contaMichely = Conta(numero = 1000, titular = "Michely")
     contaMichely.deposita(500.0)
 
     println(contaLucas.titular)
@@ -100,7 +100,7 @@ fun testaCopiasReferencias() {
     println("NumeroX $numX")
     println("NumeroY $numY")
 
-    val contaMarcelo = Conta("Marcelo", 200)
+    val contaMarcelo = Conta(titular = "Marcelo", numero = 200)
     contaMarcelo.titular = "Marcelo"
     var contaTuani = contaMarcelo
     contaTuani.titular = "Tuani"
