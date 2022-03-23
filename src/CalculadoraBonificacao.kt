@@ -3,14 +3,6 @@ class CalculadoraBonificacao {
         private set
 
     fun registra(funcionario: Funcionario) {
-        this.total += funcionario.getBonificacao()
+        this.total += funcionario.bonificacao
     }
-
-//    fun registra(gerente: Gerente) {
-//        this.total += gerente.getBonificacao()
-//    }
-//
-//    fun registra(diretor: Diretor) {
-//        this.total += diretor.getBonificacao()
-//    }
 }

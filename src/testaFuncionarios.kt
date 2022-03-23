@@ -1,14 +1,15 @@
-private fun testaFuncionarios() {
-    val ryan = Funcionario(
+fun testaFuncionarios() {
+    val ryan = Analista(
         nome = "Ryan",
         cpf = "500.001.111.01",
-        salario = 1000.0
+        salario = 1000.0,
+        senha = 5548
     )
 
     println("Nome ${ryan.nome}")
     println("CPF ${ryan.cpf}")
     println("Salario ${ryan.salario}")
-    println("Bonificação ${ryan.getBonificacao()}")
+    println("Bonificação ${ryan.bonificacao}")
 
     println()
 
@@ -22,7 +23,7 @@ private fun testaFuncionarios() {
     println("Nome ${alessandro.nome}")
     println("CPF ${alessandro.cpf}")
     println("Salario ${alessandro.salario}")
-    println("Bonificação Gerente ${alessandro.getBonificacao()}")
+    println("Bonificação Gerente ${alessandro.bonificacao}")
 
     if (alessandro.autentica(1234)) {
         println("Autenticou com sucesso!")
@@ -43,7 +44,7 @@ private fun testaFuncionarios() {
     println("Nome ${ricardo.nome}")
     println("CPF ${ricardo.cpf}")
     println("Salario ${ricardo.salario}")
-    println("Bonificação Gerente ${ricardo.getBonificacao()}")
+    println("Bonificação Gerente ${ricardo.bonificacao}")
     println("PLR: ${ricardo.plr}")
 
     val luciana = Analista(
