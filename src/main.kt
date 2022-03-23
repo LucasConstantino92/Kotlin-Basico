@@ -26,9 +26,9 @@ fun main() {
     println("Salario ${alessandro.salario}")
     println("Bonificação Gerente ${alessandro.getBonificacao()}")
 
-    if(alessandro.autentica(1234)){
+    if (alessandro.autentica(1234)) {
         println("Autenticou com sucesso!")
-    }else {
+    } else {
         println("Falha na autenticação.")
     }
 
@@ -48,11 +48,19 @@ fun main() {
     println("Bonificação Gerente ${ricardo.getBonificacao()}")
     println("PLR: ${ricardo.plr}")
 
+    val luciana = Analista(
+        nome = "Luciana",
+        cpf = "555.555.555.56",
+        salario = 2500.0,
+        senha = 5434
+    )
+
     val calculadora = CalculadoraBonificacao()
 
     calculadora.registra(ryan)
     calculadora.registra(ricardo)
     calculadora.registra(alessandro)
+    calculadora.registra(luciana)
 
-    println("Total de bonificação: ${calculadora.total}")
+    println("Total de bonificão: ${calculadora.total}")
 }
