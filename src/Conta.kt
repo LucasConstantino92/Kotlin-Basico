@@ -1,9 +1,9 @@
-open class Conta(
+abstract class Conta(
     var titular: String,
     var numero: Int
 ) {
     var saldo = 0.0
-        private set
+        protected set
 
     fun deposita(valor: Double) {
         if (valor > 0) {
@@ -20,11 +20,5 @@ open class Conta(
         return false
     }
 
-    open fun sacaDinheiro(valor: Double) {
-        if (saldo >= valor) {
-            this.saldo -= valor
-        } else {
-            println("Saldo insuficiente. Seu saldo é de $saldo e sua tentativa foi de $valor")
-        }
-    }
+    abstract fun sacaDinheiro(valor: Double)
 }

@@ -1,4 +1,4 @@
-private fun testaContasDiferentes() {
+fun testaContasDiferentes() {
     val contaCorrente: Conta = ContaCorrente(
         titular = "Ryan",
         numero = 1000
