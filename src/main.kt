@@ -10,7 +10,7 @@ fun main() {
     println("Nome ${ryan.nome}")
     println("CPF ${ryan.cpf}")
     println("Salario ${ryan.salario}")
-    println("Bonificação ${ryan.bonificacao()}")
+    println("Bonificação ${ryan.getBonificacao()}")
 
     println()
 
@@ -24,7 +24,7 @@ fun main() {
     println("Nome ${alessandro.nome}")
     println("CPF ${alessandro.cpf}")
     println("Salario ${alessandro.salario}")
-    println("Bonificação Gerente ${alessandro.bonificacao()}")
+    println("Bonificação Gerente ${alessandro.getBonificacao()}")
 
     if(alessandro.autentica(1234)){
         println("Autenticou com sucesso!")
@@ -45,6 +45,14 @@ fun main() {
     println("Nome ${ricardo.nome}")
     println("CPF ${ricardo.cpf}")
     println("Salario ${ricardo.salario}")
-    println("Bonificação Gerente ${ricardo.bonificacao()}")
+    println("Bonificação Gerente ${ricardo.getBonificacao()}")
     println("PLR: ${ricardo.plr}")
+
+    val calculadora = CalculadoraBonificacao()
+
+    calculadora.registra(ryan)
+    calculadora.registra(ricardo)
+    calculadora.registra(alessandro)
+
+    println("Total de bonificação: ${calculadora.total}")
 }
